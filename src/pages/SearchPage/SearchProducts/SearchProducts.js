@@ -8,7 +8,7 @@ const SearchProducts = () => {
       <div className="mb-12 flex justify-end">
         <SearchNav></SearchNav>
       </div>
-      <div className="grid lg:grid-cols-3 gap-6">
+      <div className="grid lg:grid-cols-1 gap-6">
         <SearchProductCard></SearchProductCard>
         <SearchProductCard></SearchProductCard>
         <SearchProductCard></SearchProductCard>
