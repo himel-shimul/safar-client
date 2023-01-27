@@ -13,6 +13,7 @@ import Reviews from "../../Test/CardDashboard/Reviews/Reviews";
 import SinglePage from "../../Test/SinglePage/SinglePage";
 import Test from "../../Test/Test";
 import Modals from "../../Test/SinglePage/Modals/Modals";
+import SingleProductCard from "../../pages/SearchPage/SearchProducts/SearchProductCard/SingleProductCard";
 
 export const router = createBrowserRouter([
   {
@@ -51,7 +52,7 @@ export const router = createBrowserRouter([
   },
   {
     path: "/test",
-    element: < />,
+    element: < SingleProductCard />,
     children: [
       {
         path: "/test/overview",
