@@ -51,7 +51,7 @@ const LeftSide = () => {
             <div className='p-2'>
                 <div className='flex justify-between' style={{ borderBottom: "1px solid grey" }}>
                     <div>
-                        <h1 className='text-2xl font-bold mb-1'>Entire villa hosted by Xabir</h1>
+                        <h1 className='lg:text-2xl font-bold mb-1'>Entire villa hosted by Xabir</h1>
                         <p>8 guests - 4 bedrooms - 5 beds - 5 baths</p>
                     </div>
                     <div className='mb-8'>
@@ -96,8 +96,8 @@ const LeftSide = () => {
                 {/* Where you will sleep & will be map */}
                 <div>
                     <h1 className='text-xl font-bold my-4'>Where you'll Sleep</h1>
-                    <div className='grid gap-4 grid-cols-3 p-4'>
-                        <div style={{ border: "1px solid grey", borderRadius: ".5rem" }}>
+                    <div className='grid gap-4 grid-cols-1 lg:grid-cols-3 p-4'>
+                        <div className='border rounded-lg'>
                             <div className='p-4'>
                                 <FaBed className='h-12 w-12' />
                                 <div>
@@ -106,7 +106,7 @@ const LeftSide = () => {
                                 </div>
                             </div>
                         </div>
-                        <div style={{ border: "1px solid grey", borderRadius: ".5rem" }}>
+                        <div className='border rounded-lg'>
                             <div className='p-4'>
                                 <FaBed className='h-12 w-12' />
                                 <div>
@@ -115,7 +115,7 @@ const LeftSide = () => {
                                 </div>
                             </div>
                         </div>
-                        <div style={{ border: "1px solid grey", borderRadius: ".5rem" }}>
+                        <div className='border rounded-lg'>
                             <div className='p-4'>
                                 <FaBed className='h-12 w-12' />
                                 <div>
@@ -130,7 +130,7 @@ const LeftSide = () => {
                 {/* What this place offers */}
                 <div className='my-4'>
                     <h1 className='text-xl font-bold'>What this place offers</h1>
-                    <div className='grid grid-cols-2'>
+                    <div className='grid lg:grid-cols-2'>
                         {
                             offersData.map(offers =>
                                 <div className='flex my-2'>

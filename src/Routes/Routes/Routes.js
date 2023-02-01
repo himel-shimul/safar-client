@@ -14,6 +14,9 @@ import Wishlists from "../../pages/UserDashboard/Wishlists/Wishlists";
 import OfferPage from "../../pages/OfferPage/OfferPage";
 import Register from "../../pages/Login/Register/Register";
 import SingleProductCard from "../../pages/SearchPage/SearchProducts/SearchProductCard/SingleProductCard";
+import SinglePageSlider from "../../Test/SinglePageSlider/SinglePageSlider";
+import FAQ from "../../pages/Shared/Footer/FAQ";
+import Error_Page from "../../pages/Error_Page/Error_Page";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -36,6 +39,14 @@ export const router = createBrowserRouter([
         element: <OfferPage></OfferPage>,
       },
       {
+        path: "/slider",
+        element: <SinglePageSlider />
+      },
+      {
+        path: "/faq",
+        element: <FAQ />
+      },
+      {
         path: "/searchpage/:id",
         element: <SearchPage></SearchPage>,
         loader: async ({ params }) =>
@@ -51,6 +62,10 @@ export const router = createBrowserRouter([
         path: "/modal",
         element: <Modals />,
       },
+      {
+        path: "/*",
+        element: <Error_Page />
+      }
     ],
   },
   // user dashboard routes

@@ -84,7 +84,7 @@ const ReviewSection = () => {
                 </div>
             </div>
 
-            <div className='grid grid-cols-2 my-4'>
+            <div className='grid grid-cols-1 lg:grid-cols-2 lg:my-4 my-2'>
                 <div className='my-3'>
                     <div className='flex'>
                         <div className='mx-4'>
@@ -160,7 +160,7 @@ const ReviewSection = () => {
                     </div>
                 </div>
             </div>
-            <div className='flex justify-center' style={{ border: "1px solid grey", borderRadius: ".5rem", width: "12%" }}>
+            <div className='flex justify-center border rounded-lg w-36'>
                 <h1 ><Link className='text-green-800 hover:text-green-600 font-bold my-6'>Show all reviews</Link></h1>
             </div>
         </div>

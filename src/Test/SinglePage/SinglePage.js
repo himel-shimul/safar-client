@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaIndent } from 'react-icons/fa';
 import DetailSection from './DetailsSection/DetailSection';
+import Modals from './Modals/Modals';
 
 const SinglePage = () => {
+    const [showModal, setShowModal] = useState(false);
+
     return (
         <div>
             <div className='flex p-2' style={{ width: "100%" }}>
@@ -25,12 +28,14 @@ const SinglePage = () => {
                         </div>
                         <div className='h-50 relative'>
                             <img className='h-full w-full' src='https://live.staticflickr.com/65535/52530446584_cb1dce6453_z.jpg' alt='' />
-                            <div className='flex absolute bg-white hover:bg-slate-200 mx-2' style={{ width: "12rem", marginTop: "-7vh", padding: ".4rem" }}>
+                            <div className='flex absolute bg-white hover:bg-slate-200 mx-2 lg:w-42 -mt-12 p-2'>
                                 <FaIndent className='mt-1 mx-2' />
-                                <button>show all photos</button>
+                                <button onClick={() => setShowModal(true)}>show all photos</button>
                             </div>
                         </div>
-
+                        <div>
+                            <Modals showModal={showModal} setShowModal={setShowModal} />
+                        </div>
                     </div>
                 </div>
             </div >

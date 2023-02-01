@@ -1,0 +1,47 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+}
+
+.cards-container {
+    display: flex;
+    border-radius: 6px;
+    color: #333;
+    padding: 1rem;
+    overflow-x: auto;
+    position: relative;
+}
+
+.slider-card {
+    flex: 1 0 250px;
+    margin: 1rem;
+    overflow: hidden;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+}
+
+.card-content {
+    padding: 1rem;
+}
+
+@media screen and (max-width: 625px) {
+    .container {
+        width: 100%
+    }
+
+    .cards-container {
+        padding: .5rem;
+    }
+
+    .card {
+        margin: .5rem;
+    }
+}
