@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import React, { useContext, useState } from "react";
 import { ImCross } from "react-icons/im";
+import { useNavigate } from "react-router-dom";
 import { SearchContext } from "../../../../contexts/SearchProvider";
 import "./Rooms.css";
 
@@ -13,9 +14,11 @@ const Rooms = ({
   getData,
   setGetData,
   hotelData,
+  day
 }) => {
   const [selectedRooms, setSelectedRooms] = useState([]);
   const { dates } = useContext(SearchContext);
+  const navigate = useNavigate();
 
   const { data, isLoading, refetch } = useQuery({
     queryKey: ["sellers"],
@@ -36,7 +39,7 @@ const Rooms = ({
 
     const rPacks = { size: s, price: p, sleep: slp };
 
-    // console.log(rPacks);
+    console.log(rPacks);
 
     if (!getSize) {
       setGetSize(true);
@@ -48,7 +51,10 @@ const Rooms = ({
 
   // console.log(getData);
 
-  const handleReserve = () => {};
+  const handleReserve = () => {
+    // window.localStorage.setItem("userData", JSON.stringify(getData));
+    navigate("/checkoutPage", { state: { getData, day } });
+  };
 
   return (
     <div className=" w-[100vw] h-[100vh] bg-[#0000006b] fixed flex top-0 left-0 items-center justify-center">
@@ -81,8 +87,8 @@ const Rooms = ({
                     }
                     // disabled={!isAvailable(singleBed)}
                   />
-                  <p>{item.price}</p>
-                  <p>{item.sleep}</p>
+                  {/* <p>{item.price}</p>
+                  <p>{item.sleep}</p> */}
                 </div>
               ))}
             </div>
@@ -96,7 +102,7 @@ const Rooms = ({
             </div>
           ))}
         </div>
-        <button className="rButton" onClick={() => handleReserve}>
+        <button className="rButton" onClick={ handleReserve}>
           Reserve Now!
         </button>
       </div>

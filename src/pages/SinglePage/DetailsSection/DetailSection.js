@@ -40,7 +40,7 @@ const DetailSection = ({ hotelData }) => {
     return diffDays;
   }
 
-  const serviceFee = 100;
+  const serviceFee = 15;
 
   const handleOpenCalender = () => {
     setIsHandleClick(true);
@@ -297,7 +297,7 @@ const DetailSection = ({ hotelData }) => {
             <div className="flex justify-between mt-6">
               <h1 className="font-bold">Total before taxes</h1>
 
-              <p>${regular_price * day + serviceFee}</p>
+              <p>${day === 0 ? 0 : regular_price * day + serviceFee}</p>
             </div>
             {getData?.map((item) => (
               <>
@@ -327,6 +327,7 @@ const DetailSection = ({ hotelData }) => {
           setGetSize={setGetSize}
           getData={getData}
           setGetData={setGetData}
+          day={day}
         ></Rooms>
       )}
       {/* <Rooms setOpenModal={setOpenModal} hotel_id={hotel_id}></Rooms> */}

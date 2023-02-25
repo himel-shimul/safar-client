@@ -1,14 +1,17 @@
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
-import React from "react";
+import React, { useState } from "react";
 import CheckoutForm from "./CheckoutForm";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData , useLocation } from "react-router-dom";
 
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PK);
 
 const CheckoutPage = () => {
   const hotelData = useLoaderData();
-  const { hotel_name } = hotelData;
+  // const { hotel_name } = hotelData;
+  const location = useLocation();
+  const [rooms, setRooms] = useState(location.state?.getData);
+  console.log(rooms);
   return (
     <div>
       <div className="flex justify-center mt-6 ">
@@ -20,13 +23,14 @@ const CheckoutPage = () => {
                 Order Summary
               </h3>
               {/* <!--     BOX     --> */}
-              <div className="border w-full rounded mt-5 p-4 flex justify-between items-center flex-wrap">
+              {rooms?.map(room => (
+                <div className="border w-full rounded mt-5 p-4 flex justify-between items-center flex-wrap">
                 <div className="w-2/3">
                   <h3 className="text-lg font-medium">
                     APPAYAN GUEST HOUSE BARIDHARA
                   </h3>
                   <p className="text-gray-600 text-xs">
-                    Sold by <b>Aashir Khan</b>
+                    Size: <b>{room.size}</b>
                   </p>
                   <h4 className="text-red-700 text-xs font-bold mt-1">
                     Only 2 left in stock
@@ -34,9 +38,9 @@ const CheckoutPage = () => {
                 </div>
                 <div>
                   <h4 className="text-xl font-medium">
-                    <sup className="text-blue-500">$</sup> 89
+                    <sup className="text-blue-500">$</sup> {room.price}
                   </h4>
-                  <h5 className="text-sm font-bold text-blue-500">60% OFF</h5>
+                  {/* <h5 className="text-sm font-bold text-blue-500">60% OFF</h5> */}
                 </div>
                 <div className="w-full flex justify-between mt-4">
                   <button className="text-red-700 hover:bg-blue-100 px-2">
@@ -61,7 +65,8 @@ const CheckoutPage = () => {
                   </label>
                 </div>
               </div>
-              <div className="border w-full rounded mt-5 flex p-4 justify-between items-center flex-wrap">
+              ))}
+              {/* <div className="border w-full rounded mt-5 flex p-4 justify-between items-center flex-wrap">
                 <div className="w-2/3">
                   <h3 className="text-lg font-medium">
                     APPAYAN GUEST HOUSE BARIDHARA
@@ -97,7 +102,7 @@ const CheckoutPage = () => {
                     </select>
                   </label>
                 </div>
-              </div>
+              </div> */}
             </div>
             <div className="w-1/2 mx-auto">
               <button className="py-2 px-2 mx-4 bg-blue-500 text-white mt-3 rounded shadow font-bold hover:bg-blue-600">

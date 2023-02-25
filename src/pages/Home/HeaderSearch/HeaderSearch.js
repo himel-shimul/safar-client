@@ -182,6 +182,7 @@ const HeaderSearch = () => {
           <h1 className="text-5xl text-blue-200 md:mb-0 mb-4 md:block hidden">
             |
           </h1>
+          
           <input
             type="submit"
             onClick={handleSearch}
