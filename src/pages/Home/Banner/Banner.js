@@ -133,7 +133,7 @@ const Banner = () => {
               <div className="rounded-full shadow-2xl shadow-sky-300 p-8">
                 <img
                   className="object-cover w-96 h-96 rounded-full border-y-8 border-blue-500 shadow-2xl shadow-sky-300  bg-white"
-                  src="https://www.cassidytravel.ie/images/family_holidays_to_lanzarote/cassidytravel_travelfinderworld_hero/?m=nbf"
+                  src="https://i.ibb.co/CwNgpSF/pexels-te-lensfix-1371360.jpg"
                   alt=""
                 />
               </div>
